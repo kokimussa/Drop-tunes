@@ -1,22 +1,22 @@
 <div class="header-container">
-  <img id="hamburger-image" src="assets/img/burger1.png" alt="Burger image.">
-  <header>Eat Burger</header>
+  <img id="jukebox-image" src="assets/img/jukebox.png" alt="Jukebox image.">
+  <header>Rock It Jukebox</header>
 </div>
 
 <div class="main-container">
-  <section id="available-hamburgers">
-    <ul id="burger-list">
-      {{#each burgers}}
-        {{#unless this.devoured}}
-          <li class="available-burger">
-            <span class="burgers">
+  <section id="available-songs">
+    <ul id="songs-list">
+      {{#each songs}}
+        {{#unless this.play}}
+          <li class="available-songs">
+            <span class="songs">
               {{this.id}}
-              {{this.burger_name}}
+              {{this.song_name}}
             </span>
-            <span id="devour-button">
+            <span id="play-button">
               <form action="/{{this.id}}?_method=PUT" method="POST">
-                <input type="hidden" name="devoured" value="true">
-                <button class="devour-button" type="submit">Devour it!</button>
+                <input type="hidden" name="play" value="true">
+                <button class="play-button" type="submit">Play it!</button>
               </form>
             </span>
           </li>
@@ -24,29 +24,29 @@
       {{/each}}
     </ul>
   </section>
-  <section id="devoured-hamburgers">
+  <section id="play-songs">
     <ul>
-      {{#each burgers}}
-        {{#if this.devoured}}
-          <li class="devour-burger">
+      {{#each songs}}
+        {{#if this.play}}
+          <li class="play-song">
             {{this.id}}
-            {{this.burger_name}}
+            {{this.song_name}}
           </li>
         {{/if}}
       {{/each}}
     </ul>
   </section>
-  <section id ="new-burger">
+  <section id ="new-song">
     <form class="create-update-form" action="/" method="POST">
 
       <div class="form-group">
-        <textarea id="new-burger-text" rows="4" name="burger_name"></textarea>
+        <textarea id="new-song-text" rows="4" name="song_name"></textarea>
       </div>
 
-      <button type="submit" id="new-burger-submit">Submit</button>
+      <button type="submit" id="new-song-submit">Submit</button>
     </form>
 
-    <p>Enter a burger you want to eat. Click the "Submit" button.</p>
+    <p>Enter a song you want to play. Click the "Submit" button.</p>
 
   </section>
 </div>

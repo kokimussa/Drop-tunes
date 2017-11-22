@@ -1,4 +1,3 @@
-INSERT INTO burgers (burger_name) VALUES ('Beef burger');
-INSERT INTO burgers (burger_name) VALUES ('Chicken burger');
-INSERT INTO burgers (burger_name) VALUES ('Fish burger');
-
+INSERT INTO songs (song_name) VALUES ('play');
+INSERT INTO songs (song_name) VALUES ('play');
+INSERT INTO songs (song_name) VALUES ('play');
