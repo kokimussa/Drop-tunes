@@ -12,15 +12,24 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(methodOverride("_method"));
 
-var exphbs = require("express-handlebars");
+var db = require('./models');
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+
+
+
+
 
 var routes = require("./controllers/music_controller.js");
 
 app.use("/", routes);
 
-app.listen(port, function() {
-  console.log("Listening on PORT " + port);
-});
+
+// NOTE Tak a closer look at 
+db.sequelize.sync({})
+	.then(function(){
+		app.listen(port, function() {
+  			console.log("Listening on PORT " + port);
+		});
+	});
+
+
