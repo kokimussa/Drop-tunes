@@ -24,7 +24,7 @@ var routes = require("./controllers/music_controller.js");
 app.use("/", routes);
 
 
-// NOTE Tak a closer look at 
+// NOTE Take a closer look at 
 db.sequelize.sync({})
 	.then(function(){
 		app.listen(port, function() {
