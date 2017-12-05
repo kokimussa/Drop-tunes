@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Drop Tunes</title>
+        <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+        <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+        <link rel="stylesheet" href="./styles/style.css">
+    </head>
+
+    <body>
+        <div id="page-bg" class="page-bg" style="background-image: url('./assets/img/album-placeholder.jpg')">
+            <div class="page-bg__inner"></div>
+        </div>
+        <div class="page-container">
+            <div class= "title-container animated rotateInUpRight"> DropTunes </div>
+            <div class="page-container__inner">
+                <main class="page-container__main">
+                    <div class="player-ui">
+                        <div class="player-ui__genre-selection">
+                            <div class="player-ui__genre-label">
+                                <p class="player-ui__genre-label-text">Pick your decade:</p>
+                            </div>
+                            <div class="player-ui__genre-options-container">
+                                <form class="player-ui__genre-options-form" name="genreOps">
+                                    <label for="genre-80s-radio" class="player-ui__genre-option-container">
+                                        <input type="radio" class="player-ui__genre-option" name="player-ui__genre-option" id="genre-80s-radio" value="80s" checked>
+                                        <span class="player-ui__genre-button">80's</span>
+                                    </label>
+                                    <label for="genre-90s-radio" class="player-ui__genre-option-container">
+                                        <input type="radio" class="player-ui__genre-option" name="player-ui__genre-option" id="genre-90s-radio" value="90s">
+                                        <span class="player-ui__genre-button">90's</span>
+                                    </label>
+                                    <label for="genre-2000s-radio" class="player-ui__genre-option-container">
+                                        <input type="radio" class="player-ui__genre-option" name="player-ui__genre-option" id="genre-2000s-radio" value="2000s">
+                                        <span class="player-ui__genre-button">2000's</span>
+                                    </label>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="player-ui__album-cover" class="player-ui__album-cover" style="background-image: url('./assets/img/album-placeholder.jpg')"></div>
+                        <div class="player-ui__seek-container">
+                            <input type="range" id="player-ui__seek" class="player-ui__seek" name="" value="0" max="">
+                        </div>
+                        <!-- <div class="progress-container">
+                            <progress id="progress-bar" class="progress-bar" value="0" max="100"></progress>
+                        </div> -->
+                        <div class="player-ui__title-container">
+                            <h1 id="song-title" class="player-ui__title-container-text"></h1>
+                        </div>
+                        <!-- <audio controls>
+                            <source src="./assets/songs/80s/caribbean-queen.mp3" type="audio/mpeg">
+                        </audio> -->
+                        <div class="player-ui__controls-container">
+                            <button class="player-ui__control prev" id="controls-previous">
+                                <span class="material-icons icon">&#xE045;</span>
+                            </button>
+                            <button class="player-ui__control play-pause pause" id="controls-play-pause">
+                                <span class="material-icons icon icon-play">&#xE037;</span>
+                                <span class="material-icons icon icon-pause">&#xE034;</span>
+                            </button>
+                            <button class="player-ui__control next" id="controls-next">
+                                <span class="material-icons icon">&#xE044;</span>
+                            </button>
+                            <audio id="native-audio-player">
+                                <source src="../assets/songs/80s/bad.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <!-- <script src="./assets/js/sockets.js"></script> -->
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="./assets/js/MusicPlayer.js"></script>
+        <script src="./assets/js/index.js"></script>
+    </body>
+</html>

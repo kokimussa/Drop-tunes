@@ -1,0 +1,300 @@
+/* Animations etc */
+
+@keyframes blurAni {
+    0% {
+        filter: blur(20px);
+    }
+    25% {
+        filter: blur(5px);
+    }
+    50% {
+        filter: blur(15px);
+    }
+    75% {
+        filter: blur(0);
+    }
+    100% {
+        filter: blur(20px);
+    }
+}
+
+@keyframes bgAni {
+    0% {
+        background-color: rgba(1, 0, 0, 0.6);
+    }
+    17% {
+        background-color: rgba(1, 0, 0, 0.7);
+    }
+    33% {
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+    50% {
+        background-color: rgba(1, 0, 0, 0.5);
+    }
+    67% {
+        background-color: rgba(1, 0, 0, 0.8);
+    }
+    100% {
+        background-color: rgba(1, 0, 0, 0.6);
+    }
+}
+
+@keyframes scrolling-text {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/*@keyframes progress-bar {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}*/
+
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Color Of The Year -- https://colorganize.com/?palette=75 */
+
+body {
+    background-color: #000;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Montserrat', sans-serif;
+    cursor: default;
+}
+
+.page-bg {
+    box-shadow: inset 0 0 200px #000;
+    /*background-image: url('http://gagadaily.com/uploads/stories/monthly_2016_09/joanne.jpg.a6d8d6fd6e671a82ae75e80925ff43d3.jpg');*/
+    background-size: cover;
+    /* Need to find different approach, this is not supported well cross browser. */
+    background-position: center;
+    filter: blur(20px);
+    animation: blurAni 24s infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.page-bg__inner {
+    background-color: rgba(0, 0, 0, 0.6);
+    animation: bgAni 18s infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.page-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.page-container__main {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.player-ui {
+    width: 300px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+.player-ui
+.player-ui__album-cover {
+    width: 100%;
+    height: 300px;
+    /*background-image: url(http://gagadaily.com/uploads/stories/monthly_2016_09/joanne.jpg.a6d8d6fd6e671a82ae75e80925ff43d3.jpg);*/
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.5);
+    margin: 0 0 15px 0;
+}
+
+.player-ui
+.player-ui__genre-options-form {
+    margin-bottom: 15px;
+}
+
+.player-ui
+.player-ui__genre-option-container {
+    display: inline-block;
+}
+
+.player-ui
+.player-ui__genre-option-container +
+.player-ui__genre-option-container {
+    margin-left: 5px;
+}
+
+.player-ui
+.player-ui__genre-option {
+    display: none;
+}
+
+.player-ui
+.player-ui__genre-option:not(:checked) +
+.player-ui__genre-button {
+    border: 1px solid #fff;
+}
+
+.player-ui
+.player-ui__genre-option:not(:checked) +
+.player-ui__genre-button:hover {
+    color: #000;
+    background-color: #fff;
+    pointer: cursor;
+}
+
+.player-ui
+.player-ui__genre-option:checked +
+.player-ui__genre-button {
+    color: #fff;
+    background-color: #1565c0;
+    font-weight: bold;
+}
+
+.player-ui
+.player-ui__genre-button {
+    height: 53px;
+    width: 90px;
+    text-align: center;
+    border-radius: 55px;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease-in-out;
+    padding: 1rem;
+    display: inline-block;
+}
+
+/*#progress {
+    width: 100%;
+    background-color: rgba(142, 166, 208, 0.2);
+}
+
+#progress-bar {
+    width: 0%;
+    height: .4rem;
+    background-color: #F7CAC9;
+}*/
+
+/*#progress-bar.play {
+    animation: progress-bar 240s infinite;
+}*/
+
+.player-ui
+.player-ui__seek {
+    width: 100%;
+}
+
+.player-ui
+.player-ui__title-container {
+    width: 100%;
+    height: 30px;
+    margin: 16px auto;
+    overflow: hidden;
+}
+
+.player-ui
+.player-ui__title-container-text {
+    font-size: 1.5rem;
+    margin: 0;
+    animation: scrolling-text 16s linear infinite;
+}
+
+.player-ui
+.player-ui__controls-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-ui
+.player-ui__control {
+    width: 2.7rem;
+    height: 2.7rem;
+    outline: none;
+    color: #ccc;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+    margin: 1px;
+    transition: transform .3s, box-shadow .5s, text-shadow .5s;
+}
+
+.player-ui
+.player-ui__control:hover, .player-ui__control:focus {
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.player-ui
+.player-ui__control:active {
+    transform: scale(0.9);
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.player-ui
+.player-ui__control
+.icon {
+    font-size: 2.7rem;
+}
+
+.player-ui
+.player-ui__control.play-pause {
+    width: 4rem;
+    height: 4rem;
+    font-size: 4rem;
+}
+
+.player-ui
+.player-ui__control.play-pause
+.icon {
+    font-size: 4rem;
+    display: none;
+}
+
+.player-ui
+.player-ui__control.play-pause.pause
+.icon-pause,
+.player-ui
+.player-ui__control.play-pause.play
+.icon-play {
+    font-size: 4rem;
+    display: inline-block;
+}
+
+.title-container {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 70px;
+    padding: 25px;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
