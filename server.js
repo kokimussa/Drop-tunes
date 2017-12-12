@@ -6,7 +6,7 @@ var db = require('./src/models');
 var MPController = require('./src/controllers/MusicPlayerController');
 var routes = require('./src/controllers/router');
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8080;
 
 var MusicPlayerController;
 
